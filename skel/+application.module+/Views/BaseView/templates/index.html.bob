@@ -4,5 +4,5 @@
 {% endblock %}
 
 {% block content %}
-{{ application.name }}
+{{{ application.name }}}
 {% endblock %}

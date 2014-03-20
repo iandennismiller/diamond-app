@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# {{ application.name }}
-# {{ author.name }}
+# {{{ application.name }}}
+# {{{ author.name }}}
 
 import json, os, logging, string, random
 from flask.ext.security import UserMixin, RoleMixin, login_required

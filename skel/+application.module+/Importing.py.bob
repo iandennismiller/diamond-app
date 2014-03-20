@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# {{ application.name }}
-# {{ author.name }}
+# {{{ application.name }}}
+# {{{ author.name }}}
 
 import random, json
 
@@ -8,5 +8,5 @@ def load_data():
     pass
 
 def typical_workflow():
-    from {{ project.module }} import Models
+    from {{{ application.module }}} import Models
     pass

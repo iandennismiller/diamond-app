@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# {{ application.name }}
-# {{ author.name }}
+# {{{ application.name }}}
+# {{{ author.name }}}
 
 import flask, json, logging, os
 import flask.ext.security as security

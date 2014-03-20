@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# {{ application.name }}
-# {{ author.name }}
+# {{{ application.name }}}
+# {{{ author.name }}}
 
 import sys
 reload(sys)
@@ -9,10 +9,10 @@ sys.setdefaultencoding('utf-8')
 from flask.ext.diamond import Diamond, db, toolbar, security
 from . import Models
 
-class {{ project.module }}(Diamond):
+class {{{ application.module }}}(Diamond):
     def administration(self, app, db):
         from flask.ext.diamond.administration import AdminView, AuthenticatedMenuLink
-        admin = super({{ project.module }}, self).administration(app, db)
+        admin = super({{{ application.module }}}, self).administration(app, db)
 
         # Raw Model Views
         admin.add_view(AdminView(Models.Individual, db.session, name="Individuals", category="Models"))
@@ -35,6 +35,6 @@ class {{ project.module }}(Diamond):
         pass
 
 def create_app():
-    app_instance = {{ project.module }}(db, security, toolbar)
+    app_instance = {{{ application.module }}}(db, security, toolbar)
     app_instance.init_app()
     return app_instance.app
