@@ -20,10 +20,10 @@ class {{{ application.module }}}(Diamond):
         return admin
 
     def blueprints(self, app):
-        from .Views.BaseView import baseview
+        from .views.BaseView import baseview
         app.register_blueprint(baseview, url_prefix="/")
 
-        from .Views.Frontend.SimpleView import simpleview
+        from .views.Frontend.SimpleView import simpleview
         app.register_blueprint(simpleview, url_prefix="/simple")
 
     def email(self, app):
