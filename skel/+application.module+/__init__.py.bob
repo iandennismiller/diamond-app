@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+# # {{ project.name }}
+{{ application.name }}
+# {{ author.name }}
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+from flask.ext.diamond import Diamond, db, toolbar, security
+from . import Models
+
+class {{ project.module }}(Diamond):
+    def administration(self, app, db):
+        from flask.ext.diamond.administration import AdminView, AuthenticatedMenuLink
+        admin = super({{ project.module }}, self).administration(app, db)
+
+        # Raw Model Views
+        admin.add_view(AdminView(Models.Individual, db.session, name="Individuals", category="Models"))
+
+        return admin
+
+    def blueprints(self, app):
+        from .Views.BaseView import baseview
+        app.register_blueprint(baseview, url_prefix="/")
+
+        from .Views.Frontend.SimpleView import simpleview
+        app.register_blueprint(simpleview, url_prefix="/simple")
+
+    def email(self, app):
+        "disable email"
+        pass
+
+    def request_handlers(self, app):
+        "disable default request handler"
+        pass
+
+def create_app():
+    app_instance = {{ project.module }}(db, security, toolbar)
+    app_instance.init_app()
+    return app_instance.app

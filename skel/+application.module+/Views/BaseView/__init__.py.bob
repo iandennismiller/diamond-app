@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+# {{{ application.name }}}
+# {{{ copyright }}}
+
+import flask
+baseview = flask.Blueprint('baseview', __name__, template_folder='templates', static_folder='static')
+
+@baseview.route('/')
+def index():
+    "set up the default handler for requests to /"
+    return flask.redirect(flask.url_for(".login"))

@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+# # {{ project.name }}
+{{ application.name }}
+# {{ author.name }}
+
+import random, json
+
+def load_data():
+    pass
+
+def typical_workflow():
+    from {{ project.module }} import Models
+    pass
