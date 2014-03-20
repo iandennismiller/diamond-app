@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-# # {{ project.name }}
-{{ application.name }}
+# {{ application.name }}
 # {{ author.name }}
 
 import json, os, logging, string, random
