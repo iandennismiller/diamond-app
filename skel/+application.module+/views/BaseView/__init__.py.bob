@@ -8,4 +8,4 @@ baseview = flask.Blueprint('baseview', __name__, template_folder='templates', st
 @baseview.route('/')
 def index():
     "set up the default handler for requests to /"
-    return flask.redirect(flask.url_for(".login"))
+    return flask.redirect(flask.url_for("simpleview.simple"))

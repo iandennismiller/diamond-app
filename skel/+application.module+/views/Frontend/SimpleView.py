@@ -12,5 +12,5 @@ def index():
     return flask.redirect(flask.url_for(".simple"))
 
 @simpleview.route('/simple')
-def simple(unique):
+def simple():
     return flask.render_template('simple.html')
