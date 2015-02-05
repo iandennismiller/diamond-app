@@ -37,7 +37,7 @@ class {{{ application.module }}}(Diamond):
         app.register_blueprint(baseview, url_prefix="/")
 
         from .views.frontend.simpleview import simpleview
-        app.register_blueprint(simpleview, url_prefix="/simple")
+        app.register_blueprint(simpleview, url_prefix="/simpleview")
 
     def email(self, app):
         "disable email"

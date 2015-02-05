@@ -13,9 +13,9 @@ simpleview = flask.Blueprint(
 
 @simpleview.route('/')
 def index():
-    return flask.redirect(flask.url_for(".simple"))
+    return flask.redirect(flask.url_for(".hello"))
 
 
-@simpleview.route('/simple')
-def simple():
-    return flask.render_template('simple.html')
+@simpleview.route('/hello')
+def hello():
+    return flask.render_template('hello.html')
