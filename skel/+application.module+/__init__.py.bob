@@ -7,29 +7,37 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 from flask.ext.diamond import Diamond, db, toolbar, security
+from flask.ext.diamond.administration import AdminView, AdminModelView
+from .views.administration.modelviews import IndividualAdmin
 from .models import Individual
 
 
 class {{{ application.module }}}(Diamond):
     def administration(self, app, db):
-        from flask.ext.diamond.administration import AdminView, AuthenticatedMenuLink
         admin = super({{{ application.module }}}, self).administration(app, db)
 
         # Raw Model Views
-        admin.add_view(AdminView(
+        admin.add_view(IndividualAdmin(
             Individual,
             db.session,
             name="Individuals",
-            category="Models")
-        )
+            category="Models",
+            endpoint="sample"))
+
+        #admin.add_view(AdminView(
+        #    Individual,
+        #    db.session,
+        #    name="Individuals",
+        #    category="Models")
+        #)
 
         return admin
 
     def blueprints(self, app):
-        from .views.BaseView import baseview
+        from .views.baseview import baseview
         app.register_blueprint(baseview, url_prefix="/")
 
-        from .views.Frontend.SimpleView import simpleview
+        from .views.frontend.simpleview import simpleview
         app.register_blueprint(simpleview, url_prefix="/simple")
 
     def email(self, app):
