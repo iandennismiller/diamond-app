@@ -22,7 +22,7 @@ class Individual(db.Model, CRUDMixin):
         remote_side="Individual.id")
 
     def set_friend(self, obj):
-        self.father = obj
+        self.friend = obj
         self.save()
 
     def as_hash(self):

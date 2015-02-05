@@ -8,7 +8,7 @@ sys.setdefaultencoding('utf-8')
 from flask.ext.diamond import Diamond, db, toolbar, security
 from flask.ext.diamond.administration import AdminView, AdminModelView
 from .views.administration.modelviews import IndividualAdmin
-from .models import Individual
+from {{{ application.module }}} import models
 
 
 class {{{ application.module }}}(Diamond):
@@ -17,7 +17,7 @@ class {{{ application.module }}}(Diamond):
 
         # Raw Model Views
         admin.add_view(IndividualAdmin(
-            Individual,
+            models.Individual,
             db.session,
             name="Individuals",
             category="Models",

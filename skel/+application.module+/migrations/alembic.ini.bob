@@ -8,7 +8,7 @@
 # the 'revision' command, regardless of autogenerate
 # revision_environment = false
 
-script_location = db
+script_location = {{{ application.module }}}/migrations
 
 # Logging configuration
 [loggers]
