@@ -10,8 +10,8 @@ setup(version=version,
     packages=[
         "{{{ application.module }}}",
         "{{{ application.module }}}.views",
-        "{{{ application.module }}}.views.BaseView",
-        "{{{ application.module }}}.views.Frontend",
+        "{{{ application.module }}}.views.baseview",
+        "{{{ application.module }}}.views.frontend",
     ],
     scripts=[
         "bin/runserver.py",

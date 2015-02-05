@@ -1,0 +1,4 @@
+# {{{ application.name }}}
+# {{{ author.name }}}
+
+from individual import Individual
