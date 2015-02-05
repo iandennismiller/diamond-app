@@ -7,7 +7,8 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 from flask.ext.diamond import Diamond, db, toolbar, security
-from . import Models
+from .models import Individual
+
 
 class {{{ application.module }}}(Diamond):
     def administration(self, app, db):
@@ -15,7 +16,12 @@ class {{{ application.module }}}(Diamond):
         admin = super({{{ application.module }}}, self).administration(app, db)
 
         # Raw Model Views
-        admin.add_view(AdminView(Models.Individual, db.session, name="Individuals", category="Models"))
+        admin.add_view(AdminView(
+            Individual,
+            db.session,
+            name="Individuals",
+            category="Models")
+        )
 
         return admin
 
@@ -33,6 +39,7 @@ class {{{ application.module }}}(Diamond):
     def request_handlers(self, app):
         "disable default request handler"
         pass
+
 
 def create_app():
     app_instance = {{{ application.module }}}(db, security, toolbar)

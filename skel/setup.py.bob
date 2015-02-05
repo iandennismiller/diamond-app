@@ -26,11 +26,11 @@ setup(version=version,
     url='{{{ author.url }}}',
     dependency_links=[
         ('https://github.com/iandennismiller/Flask-Diamond'
-            '/archive/v0.1.9.tar.gz#egg=flask_diamond-0.1.9'),
+            '/archive/0.1.10.tar.gz#egg=flask_diamond-0.1.10'),
     ],
     install_requires=[
         ### app
-        "flask_diamond==0.1.9",
+        "flask_diamond==0.1.10",
 
         ### databases
         # "pymongo==2.6.3",
