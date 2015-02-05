@@ -26,6 +26,9 @@ class RedirectView(AdminIndexView):
 
 
 class IndividualAdmin(AuthModelView):
+
+    column_list = ("name", "friend")
+
     #form_overrides = {
     #    "upload_buffer": FileUploadField
     #}
@@ -36,5 +39,3 @@ class IndividualAdmin(AuthModelView):
     #        'base_path': "/tmp",
     #    }
     #}
-
-    column_list = ("id")

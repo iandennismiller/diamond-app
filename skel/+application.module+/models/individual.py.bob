@@ -16,12 +16,12 @@ class Individual(db.Model, CRUDMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
 
-    association_id = db.Column(db.Integer, db.ForeignKey('individual.id'))
-    association = db.relationship('Individual',
-        primaryjoin=('Individual.association_id == Individual.id'),
+    friend_id = db.Column(db.Integer, db.ForeignKey('individual.id'))
+    friend = db.relationship('Individual',
+        primaryjoin=('Individual.friend_id == Individual.id'),
         remote_side="Individual.id")
 
-    def set_association(self, obj):
+    def set_friend(self, obj):
         self.father = obj
         self.save()
 
