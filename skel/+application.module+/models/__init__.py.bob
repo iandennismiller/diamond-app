@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# {{{ application.name }}}
-# {{{ author.name }}}
+# {{{ application.name }}} (c) {{{ author.name }}}
 
 from individual import Individual

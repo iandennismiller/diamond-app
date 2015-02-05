@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-# {{{ application.name }}}
-# {{{ author.name }}}
+# {{{ application.name }}} (c) {{{ author.name }}}
 
 import flask
 baseview = flask.Blueprint('baseview', __name__, template_folder='templates', static_folder='static')

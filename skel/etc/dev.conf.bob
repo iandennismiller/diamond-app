@@ -1,9 +1,9 @@
 PROJECT_NAME = "{{{ application.name }}}"
 PORT = {{{ application.port }}}
-LOG = "/var/lib/{{{ application.name }}}/dev.log"
-SQLALCHEMY_DATABASE_URI = "sqlite:////var/lib/{{{ application.name }}}/dev.db"
+LOG = "/var/lib/{{{ application.module }}}/dev.log"
+SQLALCHEMY_DATABASE_URI = "sqlite:////var/lib/{{{ application.module }}}/dev.db"
 SECRET_KEY = {{{ secret }}}
-BASE_URL = "http://{{{ application.name }}}.saperea.com"
+BASE_URL = "http://{{{ application.module }}}.saperea.com"
 
 SECURITY_PASSWORD_SALT = {{{ hash_salt }}}
 SECURITY_POST_LOGIN_VIEW = "/admin"

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-# {{{ application.name }}}
-# {{{ author.name }}}
+# {{{ application.name }}} (c) {{{ author.name }}}
 
 from flask.ext.wtf import Form
 import wtforms.fields as fields
