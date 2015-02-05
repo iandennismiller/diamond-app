@@ -1,3 +1,5 @@
+# {{{ application.name }}} (c) {{{ author.name }}}
+
 PROJECT_NAME = "{{{ application.name }}}"
 PORT = {{{ application.port }}}
 LOG = "/var/log/{{{ application.module }}}/daemon.log"
