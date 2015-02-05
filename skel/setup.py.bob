@@ -9,9 +9,9 @@ setup(version=version,
     description="{{{ description.short }}}",
     packages=[
         "{{{ application.module }}}",
-        #"{{{ application.module }}}.views",
-        #"{{{ application.module }}}.views.BaseView",
-        #"{{{ application.module }}}.views.Frontend",
+        "{{{ application.module }}}.views",
+        "{{{ application.module }}}.views.BaseView",
+        "{{{ application.module }}}.views.Frontend",
     ],
     scripts=[
         "bin/runserver.py",
@@ -33,13 +33,8 @@ setup(version=version,
         "flask_diamond==0.1.9",
 
         ### databases
-        ### mongodb
         # "pymongo==2.6.3",
         # "Flask-MongoEngine>=0.1.3",
-        ### sqlalchemy
-        "SQLAlchemy==0.9.3",
-        "SQLAlchemy-Utils==0.24.1",
-        "Flask-SQLAlchemy>=1.0",
     ],
     license='MIT',
     zip_safe=False,
