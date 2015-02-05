@@ -2,9 +2,13 @@
 
 ## first clone the skeleton
 
-git clone git@oxford.saperea.com:skel/diamond-app.git ~/Work/diamond-app
+```
+git clone https://github.com/iandennismiller/diamond-app.git /tmp/diamond-app
+```
 
 ## then use it to scaffold in the current directory
 
-workon mrbob
-mrbob -w ~/Work/diamond-app/skel
+```
+pip install mrbob
+mrbob -w /tmp/diamond-app/skel
+```
