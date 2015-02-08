@@ -48,7 +48,7 @@ def init_db():
 @manager.command
 def populate_db():
     "insert a default set of objects"
-    from flask.ext.diamond.utils import add_system_users
+    from flask_diamond import add_system_users
     add_system_users(security)
 
 if __name__ == "__main__":
