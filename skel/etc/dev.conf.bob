@@ -4,7 +4,7 @@ PROJECT_NAME = "{{{ application.name }}}"
 PORT = {{{ application.port }}}
 LOG = "var/log/dev.log"
 LOG_LEVEL = "DEBUG"
-SQLALCHEMY_DATABASE_URI = "sqlite:///var/db/dev.db"
+SQLALCHEMY_DATABASE_URI = "sqlite:////tmp/{{{ application.module }}}-dev.db"
 SECRET_KEY = {{{ secret }}}
 BASE_URL = "http://{{{ application.module }}}.com"
 
