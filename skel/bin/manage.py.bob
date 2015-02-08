@@ -31,8 +31,8 @@ manager.add_command('db', MigrateCommand)
 @manager.option('-p', '--password', help='password')
 def adduser(email, password):
     "add a user to the database"
-    from {{{ application.module }}} import Models
-    Models.User.create(email=email, password=password)
+    from {{{ application.module }}} import models
+    models.User.create(email=email, password=password)
 
 
 @manager.command

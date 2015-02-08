@@ -1,14 +1,14 @@
 """update to flask-diamond 0.2.0
 
 Revision ID: 20f04b9598da
-Revises: 13011baa608a
+Revises: cf0f5b45967
 Create Date: 2015-02-07 22:54:24.608403
 
 """
 
 # revision identifiers, used by Alembic.
 revision = '20f04b9598da'
-down_revision = '13011baa608a'
+down_revision = 'cf0f5b45967'
 
 from alembic import op
 import sqlalchemy as sa
