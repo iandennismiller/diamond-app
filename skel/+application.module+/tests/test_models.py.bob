@@ -26,10 +26,10 @@ class UserTestCase(ModelTestCase):
     "Coverage for User Model"
 
     def test_user(self):
-        ian = models.User.create(email='ian', password='ian')
-        ian = models.User.find(email='ian')
+        ian = models.User.create(email='ianclone', password='ian')
+        ian = models.User.find(email='ianclone')
         assert ian
-        assert ian.email == 'ian'
+        assert ian.email == 'ianclone'
 
     @attr("skip")
     def test_skip(self):
