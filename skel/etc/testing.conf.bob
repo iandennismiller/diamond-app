@@ -3,9 +3,10 @@
 PROJECT_NAME = "{{{ application.name }}}"
 PORT = {{{ application.port }}}
 LOG = "/var/lib/{{{ application.module }}}/testing.log"
+LOG_LEVEL = "DEBUG"
 SQLALCHEMY_DATABASE_URI = "sqlite:////var/lib/{{{ application.module }}}/testing.db"
 SECRET_KEY = {{{ secret }}}
-BASE_URL = "http://{{{ application.module }}}.saperea.com"
+BASE_URL = "http://{{{ application.module }}}.com"
 
 SECURITY_PASSWORD_SALT = {{{ hash_salt }}}
 SECURITY_POST_LOGIN_VIEW = "/admin"
@@ -13,8 +14,13 @@ SECURITY_PASSWORD_HASH = 'sha256_crypt'
 SECURITY_URL_PREFIX = '/user'
 SECURITY_CHANGEABLE = True
 SECURITY_SEND_PASSWORD_CHANGE_EMAIL = False
+SECURITY_CONFIRMABLE = False
+SECURITY_REGISTERABLE = False
+SECURITY_RECOVERABLE = False
+SECURITY_TRACKABLE = False
+SECURITY_EMAIL_SENDER = "accounts@{{{ application.module }}}.com"
 
-DEBUG = True
+DEBUG = False
 DEBUG_TOOLBAR = False
 
 MAIL_SERVER = 'localhost'

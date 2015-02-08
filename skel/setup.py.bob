@@ -10,8 +10,9 @@ setup(version=version,
     description="{{{ description.short }}}",
     packages=[
         "{{{ application.module }}}",
+        "{{{ application.module }}}.models",
         "{{{ application.module }}}.views",
-        "{{{ application.module }}}.views.baseview",
+        "{{{ application.module }}}.views.base",
         "{{{ application.module }}}.views.frontend",
     ],
     scripts=[
@@ -27,11 +28,11 @@ setup(version=version,
     url='{{{ author.url }}}',
     dependency_links=[
         ('https://github.com/iandennismiller/Flask-Diamond'
-            '/archive/0.1.11.tar.gz#egg=flask_diamond-0.1.11'),
+            '/archive/0.2.0.tar.gz#egg=flask_diamond-0.2.0'),
     ],
     install_requires=[
         ### app
-        "flask_diamond==0.1.11",
+        "flask_diamond==0.2.0",
 
         ### databases
         # "pymongo==2.6.3",

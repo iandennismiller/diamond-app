@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 # {{{ application.name }}} (c) {{{ author.name }}}
 
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
-from flask.ext.diamond import Diamond, db, toolbar, security
+from flask.ext.diamond import Diamond, db, security
 from flask.ext.diamond.administration import AdminView, AdminModelView
 from .views.administration.modelviews import IndividualAdmin
-from {{{ application.module }}} import models
+from . import models
+from .views.base import baseview
+from .views.frontend.simpleview import simpleview
 
 
 class {{{ application.module }}}(Diamond):
-    def administration(self, app, db):
-        admin = super({{{ application.module }}}, self).administration(app, db)
+    def administration(self):
+        admin = super({{{ application.module }}}, self).administration()
 
         # Raw Model Views
         admin.add_view(IndividualAdmin(
@@ -32,23 +30,20 @@ class {{{ application.module }}}(Diamond):
 
         return admin
 
-    def blueprints(self, app):
-        from .views.baseview import baseview
-        app.register_blueprint(baseview, url_prefix="/")
+    def blueprints(self):
+        self.app.register_blueprint(baseview, url_prefix="/")
+        self.app.register_blueprint(simpleview, url_prefix="/simpleview")
 
-        from .views.frontend.simpleview import simpleview
-        app.register_blueprint(simpleview, url_prefix="/simpleview")
-
-    def email(self, app):
+    def email(self):
         "disable email"
         pass
 
-    def request_handlers(self, app):
+    def request_handlers(self):
         "disable default request handler"
         pass
 
 
 def create_app():
-    app_instance = {{{ application.module }}}(db, security, toolbar)
+    app_instance = {{{ application.module }}}()
     app_instance.init_app()
     return app_instance.app

@@ -4,22 +4,45 @@
 from nose.plugins.attrib import attr
 
 from flask.ext.diamond.utils.testhelpers import GeneralTestCase
-from {{{ application.module }}} import models
+from {{{ application.module }}} import models, create_app, db
+from .fixtures import typical_workflow
 
 
 class ModelTestCase(GeneralTestCase):
+    "A collection of Model tests"
+
+    def create_app(self):
+        self.app = create_app()
+        self.app.config['WTF_CSRF_ENABLED'] = False
+        self.db = db
+        return self.app
+
     def setUp(self):
-        self.db.drop_all()
-        self.db.create_all()
-        # do not create default items here; i.e. only drop and create tables
+        super(ModelTestCase, self).setUp()
+        typical_workflow()
 
 
-class {{{ application.module }}}ModelTestCase(ModelTestCase):
+class UserTestCase(ModelTestCase):
+    "Coverage for User Model"
+
     def test_user(self):
         ian = models.User.create(email='ian', password='ian')
         ian = models.User.find(email='ian')
         assert ian
         assert ian.email == 'ian'
+
+    @attr("skip")
+    def test_skip(self):
+        assert False
+
+class IndividualTestCase(ModelTestCase):
+    "Coverage for Invidiaul Model"
+
+    def test_individual(self):
+        ian = models.Individual.create(name="Ian")
+        liz = models.Individual.create(name="Ian", friend=ian)
+        assert ian
+        assert liz
 
     @attr("skip")
     def test_skip(self):
