@@ -21,7 +21,7 @@ class {{{ application.module }}}(Diamond):
             category="Models",
             endpoint="individual"))
 
-        #admin.add_view(AdminView(
+        #admin.add_view(AdminModelView(
         #    Individual,
         #    db.session,
         #    name="Individuals",
