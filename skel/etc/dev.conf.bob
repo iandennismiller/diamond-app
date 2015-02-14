@@ -20,7 +20,7 @@ SECURITY_RECOVERABLE = False
 SECURITY_TRACKABLE = False
 SECURITY_EMAIL_SENDER = "accounts@{{{ application.module }}}.com"
 
-DEBUG = False
+DEBUG = True
 DEBUG_TOOLBAR = True
 DEBUG_TB_INTERCEPT_REDIRECTS = False
 
