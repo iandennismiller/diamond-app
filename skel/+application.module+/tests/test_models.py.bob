@@ -25,7 +25,7 @@ class ModelTestCase(GeneralTestCase):
 class UserTestCase(ModelTestCase):
     "Coverage for User Model"
 
-    def test_user(self):
+    def test_create(self):
         ian = models.User.create(email='ianclone', password='ian')
         ian = models.User.find(email='ianclone')
         assert ian
@@ -38,7 +38,7 @@ class UserTestCase(ModelTestCase):
 class IndividualTestCase(ModelTestCase):
     "Coverage for Invidiaul Model"
 
-    def test_individual(self):
+    def test_create(self):
         ian = models.Individual.create(name="Ian")
         liz = models.Individual.create(name="Ian", friend=ian)
         assert ian
