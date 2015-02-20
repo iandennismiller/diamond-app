@@ -27,6 +27,8 @@ class RedirectView(AdminIndexView):
 
 class IndividualAdmin(AuthModelView):
 
+    edit_template = 'individual_view.html'
+
     column_list = ("name", "friend")
 
     #form_overrides = {

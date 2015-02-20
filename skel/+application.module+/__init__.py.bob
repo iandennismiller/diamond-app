@@ -13,13 +13,17 @@ class {{{ application.module }}}(Diamond):
     def administration(self):
         admin = super({{{ application.module }}}, self).administration()
 
-        # Raw Model Views
-        admin.add_view(IndividualAdmin(
+        model_list = [
             models.Individual,
-            db.session,
-            name="Individuals",
-            category="Models",
-            endpoint="individual"))
+        ]
+
+        for model in model_list:
+            admin.add_view(AdminModelView(
+                model,
+                db.session,
+                name=model.__name__,
+                category="Models")
+            )
 
         #admin.add_view(AdminModelView(
         #    Individual,
@@ -33,6 +37,9 @@ class {{{ application.module }}}(Diamond):
     def blueprints(self):
         self.app.register_blueprint(baseview, url_prefix="/")
         self.app.register_blueprint(simpleview, url_prefix="/simpleview")
+
+        from .views.administration.modelviews import adminbaseview
+        self.app.register_blueprint(adminbaseview)
 
     def email(self):
         "disable email"
