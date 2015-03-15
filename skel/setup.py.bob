@@ -4,6 +4,7 @@
 from setuptools import setup
 
 version = '0.1'
+diamond_version = '0.2.4'
 
 setup(version=version,
     name='{{{ application.name }}}',
@@ -28,10 +29,10 @@ setup(version=version,
     url='{{{ author.url }}}',
     dependency_links=[
         ('https://github.com/iandennismiller/Flask-Diamond'
-            '/archive/0.2.0.tar.gz#egg=flask_diamond-0.2.0'),
+            '/archive/{ver}.tar.gz#egg=flask_diamond-{ver}'.format(ver=diamond_version)),
     ],
     install_requires=[
-        "flask_diamond==0.2.0",
+        "flask_diamond=={ver}".format(ver=diamond_version),
     ],
     license='MIT',
     zip_safe=False,
