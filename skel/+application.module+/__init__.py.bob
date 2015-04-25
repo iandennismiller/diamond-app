@@ -35,11 +35,15 @@ class {{{ application.module }}}(Diamond):
         return admin
 
     def blueprints(self):
-        self.app.register_blueprint(baseview, url_prefix="/")
-        self.app.register_blueprint(simpleview, url_prefix="/simpleview")
+        from flask_diamond.views.diamond import diamond_blueprint
+        self.app.register_blueprint(baseview, url_prefix="/home")
+        self.app.register_blueprint(diamond_blueprint)
 
-        from .views.administration.modelviews import adminbaseview
-        self.app.register_blueprint(adminbaseview)
+        # self.app.register_blueprint(baseview, url_prefix="/")
+        # self.app.register_blueprint(simpleview, url_prefix="/simpleview")
+
+        # from .views.administration.modelviews import adminbaseview
+        # self.app.register_blueprint(adminbaseview)
 
 
 def create_app():
