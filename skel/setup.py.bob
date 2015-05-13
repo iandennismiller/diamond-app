@@ -4,7 +4,7 @@
 from setuptools import setup
 
 version = '0.1'
-diamond_version = '0.2.4'
+diamond_version = '0.2.6'
 
 setup(version=version,
     name='{{{ application.name }}}',
