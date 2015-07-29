@@ -14,3 +14,4 @@ baseview = flask.Blueprint(
 def index():
     "set up the default handler for requests to /"
     return flask.redirect(flask.url_for("simpleview.hello"))
+    # return flask.render_template("index.html")

@@ -4,7 +4,7 @@
 from setuptools import setup
 
 version = '0.1'
-diamond_version = '0.2.4'
+diamond_version = '0.2.10'
 
 setup(version=version,
     name='{{{ application.name }}}',
@@ -33,6 +33,16 @@ setup(version=version,
     ],
     install_requires=[
         "flask_diamond=={ver}".format(ver=diamond_version),
+
+        ### application-specific requirements
+
+        # "jsmin==2.0.9",
+        # "cssutils==1.0",
+        # "SQLAlchemy-Utils==0.29.8",
+        # "pymongo==2.6.3",
+        # "Flask-MongoEngine>=0.1.3",
+        # "psycopg2==2.6",
+        # "python-dateutil==2.4.2",
     ],
     license='MIT',
     zip_safe=False,
