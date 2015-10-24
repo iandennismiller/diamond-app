@@ -14,6 +14,7 @@ setup(version=version,
         "{{{ application.module }}}.views",
         "{{{ application.module }}}.views.base",
         "{{{ application.module }}}.views.frontend",
+        "{{{ application.module }}}.views.administration",
     ],
     scripts=[
         "bin/runserver.py",
@@ -27,7 +28,7 @@ setup(version=version,
     author_email='{{{ author.email }}}',
     url='{{{ author.url }}}',
     install_requires=[
-        "Flask-Diamond==0.2.13",
+        "Flask-Diamond==0.2.14",
 
         ### application-specific requirements
 
