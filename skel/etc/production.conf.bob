@@ -2,7 +2,7 @@
 
 PROJECT_NAME = "{{{ application.name }}}"
 PORT = {{{ application.port }}}
-LOG = "/var/log/{{{ application.module }}}/daemon.log"
+LOG = "/var/lib/{{{ application.module }}}/daemon.log"
 LOG_LEVEL = "DEBUG"
 SQLALCHEMY_DATABASE_URI = "sqlite:////var/lib/{{{ application.module }}}/main.db"
 SECRET_KEY = {{{ secret }}}
@@ -32,8 +32,8 @@ MAIL_USE_TLS = False
 MAIL_USERNAME = None
 MAIL_PASSWORD = None
 
-CELERY_BROKER_URL = 'sqla+sqlite:///var/db/celerydb.sqlite'
-CELERY_RESULT_BACKEND = 'db+sqlite:///var/db/results.sqlite'
+CELERY_BROKER_URL = 'sqla+sqlite:///var/lib/{{{ application.module }}}/celery-db.sqlite'
+CELERY_RESULT_BACKEND = 'db+sqlite:///var/lib/{{{ application.module }}}/celery-results.sqlite'
 
 MARSHMALLOW_STRICT = True
 MARSHMALLOW_DATEFORMAT = "%y%m%d"
